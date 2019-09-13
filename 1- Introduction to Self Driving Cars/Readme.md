@@ -10,6 +10,8 @@
   * [Welcome to The Course](#Welcome to The Course)
   * [The Story of Autonomous Vehicles](#Story of autonomous vehicles)
   * [Glossary of Terms][#Glossary of terms]
+* [Driving Taxonomy, Perception and Driving Decisions](# Driving Taxonomoy)
+  * [Lesson 1: Taxonomy of Driving](#Taxonomy of Driving)
   
   
   
