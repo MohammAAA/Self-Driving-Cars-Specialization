@@ -7,7 +7,7 @@
 
 ## Table of Contents
 * Introduction to Self-Driving Cars
-  * [Welcome to The Course](#Welcome to the course)
+  * [Welcome to The Course](#Welcome to The Course)
   * [The Story of Autonomous Vehicles](#Story of autonomous vehicles)
   * [Glossary of Terms][#Glossary of terms]
   
@@ -110,7 +110,7 @@ A common method of control defined by 3 gains.
 ##### RADAR: Radio Detection And Ranging
 A type of sensor which detects range and movement by transmitting radio waves and measuring return time and shifts of the reflected signal.
 
-###### SONAR: Sound Navigation And Ranging
+##### SONAR: Sound Navigation And Ranging
 A type of sensor which detects range and movement by transmitting sound waves and measuring return time and shifts of the reflected signal.
 
 
