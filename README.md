@@ -6,3 +6,5 @@ This repo will contain my personal notes and summaries for the [Coursera's self 
 2. State Estimation and Localization for Self-Driving Cars
 3. Visual Perception for Self-Driving Cars
 4. Motion Planning for Self-Driving Cars
+
+These notes are being written in parallel to my progress in the specialization, so I'll most likely make some mistakes.
