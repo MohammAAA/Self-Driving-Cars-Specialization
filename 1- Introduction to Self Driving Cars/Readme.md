@@ -1,4 +1,4 @@
-# ^In the name of Allah the Merciful^
+# *In the name of Allah the Merciful*
 
 # Introduction to Self-Driving Cars
 
@@ -28,7 +28,7 @@
   
   
   
-  
+## Introduction to Self-Driving cars  
   
 ### Welcome to The Course
 By the end of this course you will:
@@ -115,9 +115,50 @@ A type of sensor which detects range and movement by transmitting radio waves an
 ##### SONAR: Sound Navigation And Ranging
 A type of sensor which detects range and movement by transmitting sound waves and measuring return time and shifts of the reflected signal.
 
+## Module 1: Driving Taxonomy, Perception and Driving Decisions
+> In this module, we discuss the taxonomy of driving automation, perception needs for the driving task, and we will tackle the question of how to make driving decisions and actions. The goal of this module is to refer to how many assessments and decisions are driving task truly requires.
 
+### Lesson 1: Taxonomy of Driving
+- It's important to understand autonomous vehicle requirements and how we define self-driving for a car.
+- We will go through some terms and definitions that will be used throughout the specialization:
+  - Driving task:
+  This task is made-up of three sub-tasks:
+    - Perception
+    This includes tracking the car's motion, identifying the various elements around the car, tracking moving objects and predict their future motions.
+    - Motion planning
+    This allows us to reach our destination from point A to B successfuly (determine when you should change lanes, cross an intesection, and how to execute swerve maneuver when needed
+    - Conrolling the vehicle
+    This allows us to control the acceleration, brakes, steering angle, etc...
+  - Operational Design Domain (ODD)
+  This constitues the operating conditions for which a SDC is designed to function (environmental conditions, daytime, roadway, ...). The ODD is crucial to ensuring the safety of the system.
+
+- What makes up the driving task?
+  - Lateral Control
+  This refers to the task of steering and navigating laterally on the road, like turning left, right, moving straight, track a curve, ...
+  - Longitudinal Control
+  This is where the car position and velocity are controlled through the actions of breaking and acceleration.
+  - Object and Event Detection and Response (OEDR) 
+  It's the ability to simultaneously **detect** objects and events that immediately affect the driving task, and **react** to them.
+  - Planning
+  As the OEDR is responsible for the immediate actions, the planning part is responsible for both short term and long term actions.
+  - Miscellaneous tasks
+  These are the many other tasks that we do while driving (like signaling with indicators, handwaving, interacting with other drivers, ...).
   
-  
+  - The levels of driving automation describe the above tasks, and are defined by SAE  in [this link](https://www.sae.org/standards/content/j3016_201806/).
+    - Level 0: No automation
+    - Level 1: Driving assistance
+    Assisting in **either** Longitudinal control or lateral control, but not both (ex.: adaptive cruise control, lane keeping assistance)
+    - Level 2: Partial driving automation
+    Assisting in **both** Longitudinal control and lateral control (ex.: GM super cruise, Nissan pro-pilot assist)
+    Nowadays, many manufacturers are offering this level of autonmous vehicles including (Mercedes, Audi, Tesla and Hyundai).
+    - Level 3: Conditional driving automation
+    This system combines both control tasks and OEDR to a certain degree, and the driver doesn't need to pay attention in some specific situations, but in the case of failure, the vehicle sends alert to the driver and driver must take control. (ex.: Audi A8 sedan which can navigate unmonitored in slow traffic).
+    - Level 4: High driving automation
+    This system combines control tasks, OEDR and Fallbacks. Making the system capable of reaching a minimum risking conditions so that the driver can entirely focus on other tasks and the car handles emergencies autonomously, but this system may still ask the driver to take control in some cases. However, level 4 systems still have some permissions as they are operating with a limited ODD. We may have two car models to claim level 4 autonomous system but with very different ODD (ex.: as of fall 2018, only Waymo that has launched their level 4 vehicles for public transporation .. and these vehicles can only handle the driving task in a defined geographic area with a set of operating conditions).
+    - Level 5: Fully autonomous
+    This system has unlimited ODD. (ex.: No examples yet for this level)
+    
+
   
   
 
