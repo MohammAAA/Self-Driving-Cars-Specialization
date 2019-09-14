@@ -147,9 +147,9 @@ A type of sensor which detects range and movement by transmitting sound waves an
 - The levels of driving automation describe the above tasks, and are defined by SAE  in [this link](https://www.sae.org/standards/content/j3016_201806/).
   - Level 0: No automation
   - Level 1: Driving assistance
-  Assisting in **either** Longitudinal control or lateral control, but not both (ex.: adaptive cruise control, lane keeping assistance)
+Assisting in **either** Longitudinal control or lateral control, but not both (ex.: adaptive cruise control, lane keeping assistance)
   - Level 2: Partial driving automation
-  Assisting in **both** Longitudinal control and lateral control (ex.: GM super cruise, Nissan pro-pilot assist)
+    Assisting in **both** Longitudinal control and lateral control (ex.: GM super cruise, Nissan pro-pilot assist)
   Nowadays, many manufacturers are offering this level of autonmous vehicles including (Mercedes, Audi, Tesla and Hyundai)
   - Level 3: Conditional driving automation
   This system combines both control tasks and OEDR to a certain degree, and the driver doesn't need to pay attention in some specific situations, but in the case of failure, the vehicle sends alert to the driver and driver must take control. (ex.: Audi A8 sedan which can navigate unmonitored in slow traffic).
