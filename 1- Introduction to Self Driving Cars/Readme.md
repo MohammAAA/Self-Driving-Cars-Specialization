@@ -1,9 +1,14 @@
 # *In the name of Allah the Merciful*
 
-# Introduction to Self-Driving Cars
+# Introduction to Self-Driving Cars - Week 1
 
 ## Course Objectives
 > This course will introduce you to the terminology, design considerations and safety assessment of self-driving cars. By the end of this course, you will be able to: - Understand commonly used hardware used for self-driving cars - Identify the main components of the self-driving software stack - Program vehicle modelling and control - Analyze the safety frameworks and current industry practices for vehicle development For the final project in this course, you will develop control code to navigate a self-driving car around a racetrack in the CARLA simulation environment. You will construct longitudinal and lateral dynamic models for a vehicle and create controllers that regulate speed and path tracking performance using Python. You’ll test the limits of your control design and learn the challenges inherent in driving at the limit of vehicle performance. This is an advanced course, intended for learners with a background in mechanical engineering, computer and electrical engineering, or robotics.
+
+## Week Objectives
+ >   Review the layout of the courses in the Specialization
+     Review the main projects offered in this course
+     Examine the state of the self-driving industry
 
 ## Table of Contents
 * Introduction to Self-Driving Cars
@@ -13,22 +18,7 @@
 * [Driving Taxonomy, Perception and Driving Decisions](# Driving Taxonomoy)
   * [Lesson 1: Taxonomy of Driving](#Taxonomy of Driving)
   * [Lesson 2: Requirements for Perception]
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  * [Lesson 3: Driving Decisions and Actions]
   
 ## Introduction to Self-Driving cars  
   
@@ -168,14 +158,87 @@ A type of sensor which detects range and movement by transmitting sound waves an
 ### Lesson 2: Requirements for Perception
 - Lesson objectives:
   - Perception defintion
-  - Goals for definition
+  - Goals for perception
   - Challenges to perception
   
-- Roughly, the driving task may be split into two components 
+- Roughly, the driving task may be split into two components:
+[](Images/Driving-task-block-diagram.png)
+
+- To build a SDC, we need to perform OEDR and as we know, perception is one of the most important tasks in the OEDR.
+- What is Perecption? .. It's the process in which SDC makes sense of the environment
+- For any agent (element) on the road, the SDC should perform 2 main things:
+  - **Identify** what the agent is (car, bike, bus, ...)
+  - **Understand** the agent's motion to then predict what the agent will do next.
+- It's easy for humans to perform perception, but it's still difficult for computers to recognize the patterns as humans. We also can predict the trajectory of a moving object, and it's not easy at all for machines to do so.
+
     
+- What do we need from perception? (Goals for perception)
+  - Identify static objects\
+  Road and lane markings, curbs (the road boundaries), traffic signals, road signs (these are off-road signs), construction signs (on-road signs), etc..
+  - Identify and predict dynamic objects\
+  Vehicles on the road (both the 4-wheelers and 2-wheelers, btw 2-wheelers are more difficult to predict as they have more degrees of freedom), pedesterians (much more difficult as they have more degrees of freedom.)
+  - Ego localization\ 
+  To estimate where we are and how we are moving at any moment. The data used for this task comes from GPS, IMU, sensors. and they all need to be combined together to form a robust picture)
+  *The second and third courses in the specialization cover the 3 above tasks in details*
 
+- Why perception is hard? (Challenges to perception)
+  - We need as much robust detection and segmentation as we can to achieve the human level capability, we also need very large datasets.
+  - Perception is not ammune to *uncertainty* as there are many times that GPS, RADAR, LIDAR, or sensors are giving noisy data, so that any subsystem must take uncertainty conditions into account.
+  - Visual effects -like occlusion, reflection, illumination issues, lins flare from cameras or LIDAR data- can confuse the perception tasks with un-accurate indicators.
+    - **Accurate perception needs multiple redundant sources of information to overcome data loss**
+  - Weather conditions and precipitation are having strong effect on the perception task (RADAR and LIDAR are immune to this issue).
+
+
+### Lesson 3: Driving Decisions and Actions
+- Lesson objectives:
+  - Planning: types (with respect to *time*) and examples
+  - Examples about decisions needed for a simple intersection scenario
+  - Planning types (with respect to *logic*)
+  
+- Decision making is a part of the Planning task.
+- We have three types of planning (wrt. time):
+  - Long Term\
+  A high level plan for the entire driving task, like the driving instructions we get from our mapping appications when we want to navigate from New York to Los Angeles (which roads and which lanes to take)
+  - Short Term\
+  This is the decision of answering the kind of questions like (can I change lanes rightnow? .. can I pass this intersection and join the left road? ..)
+  - Immediate Decisions\
+  This decision involves the control and trajectory planning (can I stay on track on this curved lane? if not, can I follow this lane by either way? and what steering input should I apply? how much acceleration or brake do I need?)
+  
+- The following example (and all the upcoming examples) are assuming right-handed driving.
+
+Consider a car at the intersection and wants to turn left, lets consider some scenarios and the corresponding short term and immediate decisions to successfuly do this operation.
+[](Images/week1_example1_1.png)
+
+**Assume** that the intersection has traffic lights so that the agents motions are controlled
+- We need to decide if we should make a left lane change before turning left (remember we are assuming right-handed driving)
+- As we approach the intersection, we may decide to make a hard slow down or we will most likely decide to slow down smoothly
+- If the traffic light is red then we need to **Stop** just before the pedesterians crossing lines\
+*The above decisions are all short term decisions.*
+- But we also need to think and respond to situations around the way, so we need **OEDR** in our decision making
+  - What if another car has came in front of us before reaching the traffic line? -- we need to stop earlier than the last case in order not to crash with the leading vehicle
+  - What if the pedesterians crossing line are not marked? -- we need to approximately predict them and stop before our prediction
+  - What if other vehicles are blocking us from making the left turn, how will we respond?
+[](Images/week1_example1_2.png)
+*The above decisions are all immediate decisions to make*
+
+So for a simple scenario like this, we need to make many decisions and deal with too many different cases in the real-time.
+For this simple maneuver, we took 3-4 levels of decisions and control to execute
+
+- Now, for a general scenario, consider how many rules would it take to drive:
+  - Safely
+  - efficiently
+  - following all traffinc rules
+
+- The conclusion from this discussion is that driving task is **COMPLICATED**, that's why we need a software structure for the multi-level decision making which name is *rule based planning*.
+- Rule based planning is split into two types:
+  - Reactive planning\
+  We have rules that take into account the current state of ego vehicle and other objects, and give immediate decisions, these rules only consider the current states, not future predictions. (In the reactive planning we are considering what is happening **rightnow** and make our decision based on these immediately available information).
+  ex.: if there is a pedesterian on the road, STOP ... if the speed limit changes, adjust your speed
+
+  - Predictive planning\
+  We make predictions on how the other agents will respond over time, then use these predictions to inform our decisions.
+  This is more similar to the human natural thinking so it's a very complex task
+  ex.: the pedesterian is jaywalking, they will enter our lane by the time we reach her, so we will slow down to prevent a possible crash.
   
   
-
-
-
+- We will cover the planning tasks in details in course 4 isA. but for more information about decision making rightnow, check [this paper](https://ieeexplore.ieee.org/abstract/document/7490340) and [this](https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.20255).
