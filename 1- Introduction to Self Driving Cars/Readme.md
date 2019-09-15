@@ -12,6 +12,8 @@
   * [Glossary of Terms][#Glossary of terms]
 * [Driving Taxonomy, Perception and Driving Decisions](# Driving Taxonomoy)
   * [Lesson 1: Taxonomy of Driving](#Taxonomy of Driving)
+  * [Lesson 2: Requirements for Perception]
+  
   
   
   
@@ -161,6 +163,15 @@ A type of sensor which detects range and movement by transmitting sound waves an
   
   - Level 5: Fully autonomous\
   This system has unlimited ODD. (ex.: No examples yet for this level)
+  
+  
+### Lesson 2: Requirements for Perception
+- Lesson objectives:
+  - Perception defintion
+  - Goals for definition
+  - Challenges to perception
+  
+- Roughly, the driving task may be split into two components 
     
 
   
