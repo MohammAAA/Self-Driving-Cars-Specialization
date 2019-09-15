@@ -12,13 +12,13 @@
 
 ## Table of Contents
 * Introduction to Self-Driving Cars
-  * [Welcome to The Course](#Welcome to The Course)
-  * [The Story of Autonomous Vehicles](#Story of autonomous vehicles)
-  * [Glossary of Terms][#Glossary of terms]
-* [Driving Taxonomy, Perception and Driving Decisions](# Driving Taxonomoy)
-  * [Lesson 1: Taxonomy of Driving](#Taxonomy of Driving)
-  * [Lesson 2: Requirements for Perception]
-  * [Lesson 3: Driving Decisions and Actions]
+  * ![Welcome to The Course](#Welcome to The Course)
+  * ![The Story of Autonomous Vehicles](#Story of autonomous vehicles)
+  * ![Glossary of Terms][#Glossary of terms]
+* ![Driving Taxonomy, Perception and Driving Decisions](# Driving Taxonomoy)
+  * ![Lesson 1: Taxonomy of Driving](#Taxonomy of Driving)
+  * ![Lesson 2: Requirements for Perception]
+  * ![Lesson 3: Driving Decisions and Actions]
   
 ## Introduction to Self-Driving cars  
   
@@ -162,7 +162,7 @@ A type of sensor which detects range and movement by transmitting sound waves an
   - Challenges to perception
   
 - Roughly, the driving task may be split into two components:
-[](Images/Driving-task-block-diagram.png)
+![](Images/Driving-task-block-diagram.png)
 
 - To build a SDC, we need to perform OEDR and as we know, perception is one of the most important tasks in the OEDR.
 - What is Perecption? .. It's the process in which SDC makes sense of the environment
@@ -207,7 +207,7 @@ A type of sensor which detects range and movement by transmitting sound waves an
 - The following example (and all the upcoming examples) are assuming right-handed driving.
 
 Consider a car at the intersection and wants to turn left, lets consider some scenarios and the corresponding short term and immediate decisions to successfuly do this operation.
-[](Images/week1_example1_1.png)
+![](Images/week1_example1_1.png)
 
 **Assume** that the intersection has traffic lights so that the agents motions are controlled
 - We need to decide if we should make a left lane change before turning left (remember we are assuming right-handed driving)
@@ -218,7 +218,7 @@ Consider a car at the intersection and wants to turn left, lets consider some sc
   - What if another car has came in front of us before reaching the traffic line? -- we need to stop earlier than the last case in order not to crash with the leading vehicle
   - What if the pedesterians crossing line are not marked? -- we need to approximately predict them and stop before our prediction
   - What if other vehicles are blocking us from making the left turn, how will we respond?
-[](Images/week1_example1_2.png)
+![](Images/week1_example1_2.png)
 *The above decisions are all immediate decisions to make*
 
 So for a simple scenario like this, we need to make many decisions and deal with too many different cases in the real-time.
