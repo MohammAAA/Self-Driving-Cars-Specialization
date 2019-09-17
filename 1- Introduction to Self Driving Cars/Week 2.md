@@ -40,7 +40,7 @@ so it's crucial to carefully select your sensors
 We will discuss in the next lines about specific sensors, their importance and their comparison metrics.
 - Examples of Exteroceptive sensors
 ##### Camera
-    It's a passive, light-collecting sensor, it's used to capture rich detailed visual information about the scene.
+It's a passive, light-collecting sensor, it's used to capture rich detailed visual information about the scene.
     Some people believe that the camera is the only sensor truly needed for a self driving car
       - Comparison metrics:
         - Resolution --> number of pixels that create the image (e.g.: it specifies the quality of the image)
