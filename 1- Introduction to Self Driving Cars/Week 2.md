@@ -142,6 +142,38 @@ We will discuss in the next lines about specific sensors, their importance and t
 We will consider the 2 main scenarios: highway and urban, listing a brief comparison between each of them:
 ![](Images/week2_highway_urban_comparison.png)
 
+##### Highway Analysis
+    - We may need to make emergency stop
+    - We may need to maintain the vehicle speed to follow a leading vehicle in the same lane
+    - Or we may change lanes
+       -- Emergency stop:
+         we need this to stop the car ASAP while there is a static blockage ahead.
+         as for the previous assumptions we may derive that if we are on a 120Kmph then we a stopping distance in aggressive deceleration will be 110 m, so we need our longitudinal sensors to operate in ranges between 150 and 200 meters in front of the vehicle
+         ![](Images/)
+         
+         we also may not stop the car on time, so we also need our sensors to make *lateral* coverage as we may change lanes instead of stopping 
+         ![](Images/)
+         
+       
+       -- Maintain speed
+         we need to sense both the relative position and speed between the leading and ego vehicle in order to successfuly maintain speed
+         Typical systems use 100 meter coverage for this task
+         ![](Images/)
+         
+         There is another case which we will need *lateral coverage* as well, as if we want to merge lanes with other vehicle or vice versa .. for this task we want about 160 to 180 degree of lateral view to track adjacent lanes:
+         ![](Images/)
+         
+         
+       -- Lane change
+         We need to take care of our current lane (analyze the leading vehicle to make sure we have safe distance to change lanes and also the rear vehicle to see what it's going to do "maybe it will change lanes too")
+         
+         ![](Images/)
+         
+         and also we need to look in the adjacent lane, and maybe look further (as another car in another lane would change lanes too !) so we need wider sensing
+         
+         
+         
+
 
       
       
