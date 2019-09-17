@@ -129,7 +129,7 @@ We will discuss in the next lines about specific sensors, their importance and t
 
 
 ### Lesson 2: Hardware Configuration Design
--In this lesson we will cover:
+- In this lesson we will cover:
   - Configuration design to meet sensor coverage requirements for both *highway* and *urban* scenarios
   - layout the overall coverage and blind spots -> (design issues)
 
