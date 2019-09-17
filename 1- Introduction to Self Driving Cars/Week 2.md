@@ -100,7 +100,7 @@ We will discuss in the next lines about specific sensors, their importance and t
     GNSS accuracy varies depending on the actual positioning methods and the corrections used (RTK, PPP, DGPS)
 ##### IMU
     Measure the angular rotation rate and acceleration
-    -Both the GNSS and IMU combined can be used to estimate 3D orientation of the vehicle (heading)
+    - Both the GNSS and IMU combined can be used to estimate 3D orientation of the vehicle (heading)
     
 ##### Wheel odometry
     Measures and tracks the wheel velocity and orientation and uses these measurements to calculate overall speed and orientation (position drift) of the car.
@@ -113,10 +113,10 @@ We will discuss in the next lines about specific sensors, their importance and t
 
 
 #### Computing Hardware
-We need a very powerful hardware to take in all sensors data, compute and output the needed commands to drive the vehicle
-Most companies prefer to design their own specific hardware, but some generic hardware options are available (ex.: Nvidia drive PX, Intel & Mobileye 'eyeQ')\
-Of course the hardware contains either GPUs, FPGAs or custom ASICs to do the specific type of computation we need for image processing, segmentation, ...
-Also the hardware must sync all the different modules on the system and serve a common clock for each of them (GPS maybe the reference clock).
+    We need a very powerful hardware to take in all sensors data, compute and output the needed commands to drive the vehicle
+    Most companies prefer to design their own specific hardware, but some generic hardware options are available (ex.: Nvidia drive PX, Intel & Mobileye 'eyeQ')\
+    Of course the hardware contains either GPUs, FPGAs or custom ASICs to do the specific type of computation we need for image processing, segmentation, ...
+    Also the hardware must sync all the different modules on the system and serve a common clock for each of them (GPS maybe the reference clock).
 
  
       
