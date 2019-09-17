@@ -10,6 +10,7 @@
 ## Table of Contents
 * Autonomous Vehicle Hadware, Software and Environment Representation
   * [Lesson 1: Sensors and Computing Hardware]
+  * [Lesson 2: Hardware Configuration Design]
   
   
   
@@ -107,7 +108,14 @@ We will discuss in the next lines about specific sensors, their importance and t
     It's the same sensor that tracks the mileage on our vehicles
     
 
-- To conclude: it's too important to carefully select your combination of sensors with the appropriate configurations.
+#### To Conclude
+- it's too important to carefully select your combination of sensors with the appropriate configurations.
+- Camera is used for appearance inputs
+- Stereo camera used for depth information
+- LIDAR used for all 3D inputs
+- RADAR used for object detection
+- Ultrasonic used for the short-range 3D objects
+- GNSS/IMU/Wheel odometry used for ego state estimation
 
 ![](Images/Week2_carSensors.png)
 
@@ -117,7 +125,23 @@ We will discuss in the next lines about specific sensors, their importance and t
     Most companies prefer to design their own specific hardware, but some generic hardware options are available (ex.: Nvidia drive PX, Intel & Mobileye 'eyeQ')\
     Of course the hardware contains either GPUs, FPGAs or custom ASICs to do the specific type of computation we need for image processing, segmentation, ...
     Also the hardware must sync all the different modules on the system and serve a common clock for each of them (GPS maybe the reference clock).
+    
 
- 
+
+### Lesson 2: Hardware Configuration Design
+-In this lesson we will cover:
+  - Configuration design to meet sensor coverage requirements for both *highway* and *urban* scenarios
+  - layout the overall coverage and blind spots -> (design issues)
+
+- Every sensor has its specific configuration and field of view, so the question is how to place these sensors to aggregate a complete view of the environment.
+
+- Assume that these are the deceleration rates that we will accept for driving, we will use these assumptions to derive the detecton range needed for our sensors:
+![](Images/week2_accelerationAssumptions.png)
+
+#### Now we have to place our sensors so that we can achieve the target ODD
+We will consider the 2 main scenarios: highway and urban, listing a brief comparison between each of them:
+![](Images/week2_highway_urban_comparison.png)
+
+
       
       
