@@ -30,16 +30,16 @@
   - Sensors types and characteristics
   - Self-driving cars computing hardware
 
-- Sensors
-  - Even the best perception algorithms are limited by the quality of their sensor data,
-  so it's crucial to carefully select your sensors
-  - Sensors can be categorized into two types:
-    - Exteroceptive --> sensors which record the outside environment (extero == surroundings)
-    - Proprioceptive --> record the properties of the ego vehicle (proprio == internal)
+#### Sensors
+- Even the best perception algorithms are limited by the quality of their sensor data,
+so it's crucial to carefully select your sensors
+- Sensors can be categorized into two types:
+  - Exteroceptive --> sensors which record the outside environment (extero == surroundings)
+  - Proprioceptive --> record the properties of the ego vehicle (proprio == internal)
   
-  We will discuss in the next lines about specific sensors, their importance and their comparison metrics.
-  - Examples of Exteroceptive sensors
-    - Camera
+We will discuss in the next lines about specific sensors, their importance and their comparison metrics.
+- Examples of Exteroceptive sensors
+##### Camera
     It's a passive, light-collecting sensor, it's used to capture rich detailed visual information about the scene.
     Some people believe that the camera is the only sensor truly needed for a self driving car
       - Comparison metrics:
@@ -59,7 +59,7 @@
      
      We will go through more details about cameras in course 3 isA.
      
-     - LIDAR
+##### LIDAR
      Light Detection and Ranging sensor.
      LIDAR shoots light beams into the environment and meausring the reflected return, from these measurements, intensity and range of the reflected beams, it can estimate a 3D map of the reflected object
      LIDAR is usually based on a spinning element with multiple stacked light sources, but a new LIDAR type (HD solid-state LIDAR) is coming soon with these specs: (high resolution, solid state - with no spinning element- , low cost, reliable) 
@@ -71,7 +71,7 @@
         - Detection range 
         - Field of view
       
-      - RADAR
+##### RADAR
       Radio Detection and Ranging sensor.
       RADAR detects large objects and giving relative speed estimation robustly
       RADAR is ammune to weather and lighting conditions
@@ -84,7 +84,7 @@
           - short range, wide field of view
           - long range, narrow field of view
       
-      - SONAR (ultrasonics)
+ ##### SONAR (ultrasonics)
       SONAR is a short range, low-cost sensor
       It's used widely for parking scenarios
       Robust to lighting and precipitation conditions
@@ -94,10 +94,10 @@
           - Cost
        
   - Proprioceptive Sensors:
-    - GNSS
+ ##### GNSS
     Measure ego vehicle position and velocity
     GNSS accuracy varies depending on the actual positioning methods and the corrections used (RTK, PPP, DGPS)
-    - IMU
+##### IMU
     Measure the angular rotation rate and acceleration
     - Both the GNSS and IMU combined can be used to estimate 3D orientation of the vehicle (heading)
     
