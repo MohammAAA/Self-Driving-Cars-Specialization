@@ -26,7 +26,7 @@
   - Software architecture, decomposition
   - Environment representation for self-driving
 
-- In this lesson we will cover:
+-In this lesson we will cover:
   - Sensors types and characteristics
   - Self-driving cars computing hardware
 
@@ -38,7 +38,7 @@ so it's crucial to carefully select your sensors
   - Proprioceptive --> record the properties of the ego vehicle (proprio == internal)
   
 We will discuss in the next lines about specific sensors, their importance and their comparison metrics.
-- Examples of Exteroceptive sensors
+- Examples of Exteroceptive sensors:
 ##### Camera
     It's a passive, light-collecting sensor, it's used to capture rich detailed visual information about the scene.
     Some people believe that the camera is the only sensor truly needed for a self driving car
@@ -60,10 +60,10 @@ We will discuss in the next lines about specific sensors, their importance and t
      We will go through more details about cameras in course 3 isA.
      
 ##### LIDAR
-     Light Detection and Ranging sensor.
-     LIDAR shoots light beams into the environment and meausring the reflected return, from these measurements, intensity and range of the reflected beams, it can estimate a 3D map of the reflected object
-     LIDAR is usually based on a spinning element with multiple stacked light sources, but a new LIDAR type (HD solid-state LIDAR) is coming soon with these specs: (high resolution, solid state - with no spinning element- , low cost, reliable) 
-     LIDAR is ammune to weather and lighting conditions
+    Light Detection and Ranging sensor.
+    LIDAR shoots light beams into the environment and meausring the reflected return, from these measurements, intensity and range of the reflected beams, it can estimate a 3D map of the reflected object
+    LIDAR is usually based on a spinning element with multiple stacked light sources, but a new LIDAR type (HD solid-state LIDAR) is coming soon with these specs: (high resolution, solid state - with no spinning element- , low cost, reliable) 
+    LIDAR is ammune to weather and lighting conditions
       - Comparison metrics:
         - Number of beam sources --> it may contain 8, 16, 32, 64 sources and these are the common sizes
         - Points per second --> the faster the point per second collection, the more detailed the 3D cloud map can be.
@@ -72,45 +72,47 @@ We will discuss in the next lines about specific sensors, their importance and t
         - Field of view
       
 ##### RADAR
-      Radio Detection and Ranging sensor.
-      RADAR detects large objects and giving relative speed estimation robustly
-      RADAR is ammune to weather and lighting conditions
-        - Comparison metrics:
-          - Detection range
-          - Field of view
-          - position & speed measuremnt accuracy
+    Radio Detection and Ranging sensor.
+    RADAR detects large objects and giving relative speed estimation robustly
+    RADAR is ammune to weather and lighting condition
+      - Comparison metrics:
+        - Detection range
+        - Field of view
+        - position & speed measuremnt accuracy
         
-        - RADAR has some configurations:
-          - short range, wide field of view
-          - long range, narrow field of view
+      - RADAR has some configurations:
+        - short range, wide field of view
+        - long range, narrow field of view
       
  ##### SONAR (ultrasonics)
-      SONAR is a short range, low-cost sensor
-      It's used widely for parking scenarios
-      Robust to lighting and precipitation conditions
-        - Comparison metrics:
-          - Maximum range
-          - Detection FOV
-          - Cost
+    SONAR is a short range, low-cost sensor
+    It's used widely for parking scenarios
+    Robust to lighting and precipitation conditions
+    - Comparison metrics:
+      - Maximum range
+      - Detection FOV
+      - Cost
        
   - Proprioceptive Sensors:
+  
  ##### GNSS
     Measure ego vehicle position and velocity
     GNSS accuracy varies depending on the actual positioning methods and the corrections used (RTK, PPP, DGPS)
 ##### IMU
     Measure the angular rotation rate and acceleration
-    - Both the GNSS and IMU combined can be used to estimate 3D orientation of the vehicle (heading)
+    -Both the GNSS and IMU combined can be used to estimate 3D orientation of the vehicle (heading)
     
-    - Wheel odometry
+##### Wheel odometry
     Measures and tracks the wheel velocity and orientation and uses these measurements to calculate overall speed and orientation (position drift) of the car.
     It's the same sensor that tracks the mileage on our vehicles
     
 
 - To conclude: it's too important to carefully select your combination of sensors with the appropriate configurations.
+
 ![](Images/Week2_carSensors.png)
 
 
-- Computing Hardware:\
+#### Computing Hardware
 We need a very powerful hardware to take in all sensors data, compute and output the needed commands to drive the vehicle
 Most companies prefer to design their own specific hardware, but some generic hardware options are available (ex.: Nvidia drive PX, Intel & Mobileye 'eyeQ')\
 Of course the hardware contains either GPUs, FPGAs or custom ASICs to do the specific type of computation we need for image processing, segmentation, ...
