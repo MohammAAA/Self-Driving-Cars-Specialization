@@ -40,7 +40,7 @@ so it's crucial to carefully select your sensors
 We will discuss in the next lines about specific sensors, their importance and their comparison metrics.
 - Examples of Exteroceptive sensors
 ##### Camera
-It's a passive, light-collecting sensor, it's used to capture rich detailed visual information about the scene.
+    It's a passive, light-collecting sensor, it's used to capture rich detailed visual information about the scene.
     Some people believe that the camera is the only sensor truly needed for a self driving car
       - Comparison metrics:
         - Resolution --> number of pixels that create the image (e.g.: it specifies the quality of the image)
@@ -110,7 +110,7 @@ It's a passive, light-collecting sensor, it's used to capture rich detailed visu
 ![](Images/Week2_carSensors.png)
 
 
-- Computing Hardware:
+- Computing Hardware:\
 We need a very powerful hardware to take in all sensors data, compute and output the needed commands to drive the vehicle
 Most companies prefer to design their own specific hardware, but some generic hardware options are available (ex.: Nvidia drive PX, Intel & Mobileye 'eyeQ')\
 Of course the hardware contains either GPUs, FPGAs or custom ASICs to do the specific type of computation we need for image processing, segmentation, ...
